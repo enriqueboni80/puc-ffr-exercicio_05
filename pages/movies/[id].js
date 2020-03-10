@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import MoviesServices from '../../services/MoviesService'
 import Link from 'next/link'
 import { PageLayout, ContainerFilmes, Filme, FilmeTitle, FilmeInfo, FilmeBtnLink } from '../../visual/components'
