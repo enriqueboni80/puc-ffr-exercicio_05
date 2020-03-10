@@ -1,24 +1,38 @@
 import { useRouter } from 'next/router'
 import MoviesServices from '../../services/MoviesService'
 import Link from 'next/link'
+import { PageLayout, ContainerFilmes, Filme, FilmeTitle, FilmeInfo, FilmeBtnLink } from '../../visual/components'
 
-const Index = async () => {
-    const router = useRouter()
-    const movieID = router.query.id
-    const result = await MoviesServices.getByMovieId(movieID)
-    const movie = result.data
-    console.log(movie.title)
+const Index = (props) => {
+
+    const moviesURL = 'https://image.tmdb.org/t/p/w500/'
 
     return (
-        <div className="teste">
-            {movie.title}
-        </div> 
+        <PageLayout>
+            <ContainerFilmes>
+                <Filme>
+                    <FilmeTitle>
+                        {props.movie.title}
+                    </FilmeTitle>
+                    <img src={`${moviesURL}/${props.movie.backdrop_path}`} alt="capa" />
+                    <FilmeInfo>
+                        <p>
+                            {props.movie.overview}
+                        </p>
+                        <FilmeBtnLink>
+                            <Link target="_blank" href={props.movie.homepage}>Acesse a pagina do filme</Link>
+                        </FilmeBtnLink>
+                    </FilmeInfo>
+                </Filme>
+            </ContainerFilmes>
+        </PageLayout>
     )
 }
 
-Index.getInitialProps = async () => {
-    return {}
+Index.getInitialProps = async ({ query }) => {
+    const movieID = query.id
+    const result = await MoviesServices.getByMovieId(movieID)
+    return { movie: result.data }
 }
-
 
 export default Index
