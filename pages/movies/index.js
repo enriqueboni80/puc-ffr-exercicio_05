@@ -23,7 +23,6 @@ const Index = (props) => {
                 </ListaFilmes>
             </Container>
         </PageLayout>
-
     )
 }
 

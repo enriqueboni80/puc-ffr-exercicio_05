@@ -1,6 +1,6 @@
 import MoviesServices from '../../services/MoviesService'
 import Link from 'next/link'
-import { PageLayout, ContainerFilmes, Filme, FilmeTitle, FilmeInfo, FilmeBtnLink } from '../../visual/components'
+import { PageLayout, ContainerFilmes, Filme, FilmeTitle, FilmeInfo, FilmeBtnLink, FilmeImage } from '../../visual/components'
 
 const Index = (props) => {
 
@@ -13,7 +13,9 @@ const Index = (props) => {
                     <FilmeTitle>
                         {props.movie.title}
                     </FilmeTitle>
-                    <img src={`${moviesURL}/${props.movie.backdrop_path}`} alt="capa" />
+                    <FilmeImage>
+                        <img src={`${moviesURL}/${props.movie.backdrop_path}`} alt="capa" />
+                    </FilmeImage>
                     <FilmeInfo>
                         <p>
                             {props.movie.overview}

@@ -66,14 +66,18 @@ export const Filme = styled.div`
     margin-top: 60px;
     padding: 20px;
     text-shadow: 0px 1px 1px #000;
-
-    & > img {
-        width: 90%;
-        border-radius: 5px;
-    }
-
-
 `
+
+export const FilmeImage = styled.div`
+        display: flex;
+        justify-content:center;
+        & img {
+            width:95%;
+            border-radius: 15px;
+        }
+`
+
+
 export const FilmeTitle = styled.div`
     margin-top: 20px;
     margin-bottom: 30px;
