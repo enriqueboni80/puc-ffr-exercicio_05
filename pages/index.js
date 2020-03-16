@@ -3,57 +3,40 @@ import Head from 'next/head'
 const Home = () => (
   <div className="container">
     <Head>
-      <title>Create Next App</title>
+      <title>Ex05 - APP Filmes</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
     <main>
       <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
+        SISTEMA DE FILMES - PUCMINAS
       </h1>
 
       <p className="description">
-        Get started by editing <code>pages/index.js</code>
+        Aluno: Enrique Bonifacio
       </p>
 
       <div className="grid">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Find in-depth information about Next.js features and API.</p>
+        <a href="/movies" className="card">
+          <h3>FRONT FILMES</h3>
+          <p>Acesse ao front- do APP</p>
         </a>
 
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Learn &rarr;</h3>
-          <p>Learn about Next.js in an interactive course with quizzes!</p>
+        <a href="/api/movies" className="card">
+          <h3>API DE FILMES</h3>
+          <p>Acesse a API do APP obs:<code>movies/movieId</code>retorna somente 1 filme</p>
         </a>
 
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Discover and deploy boilerplate example Next.js projects.</p>
-        </a>
-
-        <a
-          href="https://zeit.co/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className="card"
-        >
-          <h3>Deploy &rarr;</h3>
-          <p>
-            Instantly deploy your Next.js site to a public URL with ZEIT Now.
-          </p>
-        </a>
       </div>
     </main>
 
     <footer>
       <a
-        href="https://zeit.co?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+        href="https://www.linkedin.com/in/enrique-bonifacio/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Powered by <img src="/zeit.svg" alt="ZEIT Logo" />
+        &copy; Enrique Bonifacio - Pucminas - 2020
       </a>
     </footer>
 
