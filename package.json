@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start_old": "next start",
+    "start": "next dev"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
