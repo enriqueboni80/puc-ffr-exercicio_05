@@ -1,6 +1,7 @@
 import MoviesServices from '../../services/MoviesService'
 import Link from 'next/link'
 import { Container, ListaFilmes, Article, PageLayout } from '../../visual/components'
+import axios from "axios"
 
 const Index = (props) => {
 
@@ -26,9 +27,14 @@ const Index = (props) => {
     )
 }
 
+//CONSUMINDO A API CRIADA!
+const getPopularMovies = async () => {
+    return await axios("http://localhost:3000/api/movies");
+  }
+
 Index.getInitialProps = async () => {
-    const results = await MoviesServices.getPopularMovies()
-    return { movies: results.data.results }
+    const results = await getPopularMovies()
+    return { movies: results.data }
 }
 
 export default Index

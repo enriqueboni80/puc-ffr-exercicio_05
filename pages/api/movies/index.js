@@ -7,7 +7,7 @@ const Index = (req, res) => {
 
   const getMoviesJSON = async () => {
     const results = await MoviesServices.getPopularMovies()
-    return JSON.stringify({movies: results.data.results})
+    return JSON.stringify(results.data.results)
   }
 
   const moviesJSON = getMoviesJSON()

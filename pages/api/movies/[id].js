@@ -4,7 +4,7 @@ export default (req, res) => {
 
     const getMovieJSON = async (movieID) => {
         const result = await MoviesServices.getByMovieId(movieID)
-        return JSON.stringify({ movie: result.data })
+        return JSON.stringify(result.data)
     }
 
     const movieID = req.query.id

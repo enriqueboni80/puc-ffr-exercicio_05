@@ -1,6 +1,7 @@
 import MoviesServices from '../../services/MoviesService'
 import Link from 'next/link'
 import { PageLayout, ContainerFilmes, Filme, FilmeTitle, FilmeInfo, FilmeBtnLink, FilmeImage } from '../../visual/components'
+import axios from "axios"
 
 const Index = (props) => {
 
@@ -30,9 +31,13 @@ const Index = (props) => {
     )
 }
 
+const getByMovieId = async (movieID) => {
+    return await axios(`http://localhost:3000/api/movies/${movieID}`);
+  }
+
 Index.getInitialProps = async ({ query }) => {
     const movieID = query.id
-    const result = await MoviesServices.getByMovieId(movieID)
+    const result = await getByMovieId(movieID)
     return { movie: result.data }
 }
 
